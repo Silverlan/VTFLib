@@ -15,6 +15,8 @@
 
 #include <limits>
 
+#undef max
+
 using namespace VTFLib;
 using namespace VTFLib::IO::Readers;
 

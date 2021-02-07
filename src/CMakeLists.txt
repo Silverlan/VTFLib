@@ -56,7 +56,7 @@ set(vtflib_HDRS
 	"${CMAKE_CURRENT_BINARY_DIR}/config.h")
 
 configure_file(config.h.in "${CMAKE_CURRENT_BINARY_DIR}/config.h" @ONLY)
-configure_file(Resource.rc.in "${CMAKE_CURRENT_BINARY_DIR}/Resource.rc" @ONLY)
+# configure_file(Resource.rc.in "${CMAKE_CURRENT_BINARY_DIR}/Resource.rc" @ONLY)
 
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
 	add_subdirectory(windows)
@@ -69,7 +69,8 @@ add_library(${VTFLIB_NAME} SHARED
 	${vtflib_SRCS}
 	${vtflib_OS_SRCS}
 	${vtflib_HDRS}
-	"${CMAKE_CURRENT_BINARY_DIR}/Resource.rc")
+	)
+#"${CMAKE_CURRENT_BINARY_DIR}/Resource.rc"
 
 if(USE_LIBTXC_DXTN)
 	target_link_libraries(${VTFLIB_NAME} ${LIBTXC_DXTN_LIBRARY})
